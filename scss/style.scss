@@ -1,0 +1,185 @@
+@import "vars";
+@import "fonts";
+@import "reset";
+@import "libs";
+@import "global";
+
+.top {
+    text-align: center;
+    .title {
+        border-color: #029044 #fff #d51d21;
+        border-style: solid none;
+        border-width: 20px;
+        padding: 5px 0;
+        span {
+            text-transform: uppercase;
+        }
+    }
+    .title-top {
+        font-size: 24px;
+        line-height: 28px;
+    }
+    &__form {
+        margin-top: 16px;
+    }
+    &__input {
+        margin-bottom: 16px;
+        border-radius: 89px;
+        border: none;
+        width: 288px;
+        height: 32px;
+        background-color: #e5e5e5;
+        padding: 8px 16px;
+        font-size: 14px;
+        line-height: 16px;
+        &::placeholder {
+            color: rgba(151, 151, 151, 1);
+        }
+    }
+    &__text {
+        @extend %roboto-700;
+        color: #d51d21;
+        font-size: 14px;
+        line-height: 16px;
+        span {
+            color: $subtitle;
+        }
+    }
+    &__button {
+        margin: 19px 0;
+        padding: 3px 22px;
+        font-size: 36px;
+        line-height: 42px;
+        @extend %roboto-700;
+        border: none;
+        color: #fff;
+        background-color: $title;
+        border-radius: 55px;
+        box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+        cursor: pointer;
+    }
+}
+
+.product-info {
+    text-align: center;
+    &__top-text {
+        background-color: #029044;
+        color: #fff;
+        font-size: 14px;
+        line-height: 16px;
+        padding: 16px 21px;
+        @extend %roboto-400;
+    }
+    &__text {
+        padding: 16px 12px;
+        color: #d51d21;
+        font-size: 14px;
+        line-height: 16px;
+        @extend %roboto-400;
+        span {
+            color: #000;
+            @extend %roboto-700;
+        }
+    }
+    
+    &__slider-item {
+        background-color: #0c93a4;
+        height: 279px;
+    }
+    &__slider-text {
+        font-size: 14px;
+        line-height: 16px;
+        color: #fff;
+        @extend %roboto-700;
+        padding: 16px 16px 0;
+        text-transform: uppercase;
+    }
+    &__slider-img {
+        padding: 11px 0 0 28px;
+    }
+    &__slider-info {
+        margin-top: 27px;
+        font-size: 14px;
+        line-height: 16px;
+        @extend %roboto-400;
+        text-align: left;
+        padding-left: 70px;
+        position: relative;
+        &::after {
+            content: url("../images/slider-icon.svg");
+            position: absolute;
+            left: 18px;
+            top: -10px;
+            width: 48px;
+            height: 48px;
+        }
+    }
+}
+
+.slick-dots {
+    display: flex;
+    justify-content: center;
+
+    li {
+        padding: 0;
+        line-height: 0;
+        button {
+            font-size: 0;
+            background-color: #e5e5e5;
+            width: 16px;
+            height: 16px;
+            border-radius: 50%;
+            border: none;
+            margin: 0 8px;
+        }
+        &.slick-active {
+            button {
+                background-color: #e5e5e5;
+                position: relative;
+                &::before {
+                    content: "";
+                    position: absolute;
+                    width: 8px;
+                    height: 8px;
+                    border-radius: 50%;
+                    background-color: #0c93a4;
+                    top: 50%;
+                    left: 50%;
+                    transform: translate(-50%, -50%);
+                }
+            }
+        }
+    }
+}
+.description {
+    position: relative;
+    &::before {
+        content: url("../images/desc-bg.svg");
+        position: absolute;
+        top: 85px;
+        left: 72px;
+        width: 164px;
+        height: 200px;
+    }
+    &__title {
+        background-color: #0c93a4;
+        padding: 16px 0;
+        color: #fff;
+        font-size: 14px;
+        line-height: 16px;
+        @extend %roboto-700;
+        margin-bottom: 8px;
+        span {
+            text-transform: uppercase;
+            display: block;
+        }
+    }
+    &__text {
+        padding: 4px 36px;
+        font-size: 14px;
+        line-height: 16px;
+        @extend %roboto-400;
+    }
+}
+
+@import "media";
